@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     renderCartItems();
+    updateCartCount(); // Ensure the cart count is updated on page load
 });
 
 function getCart() {
@@ -51,4 +52,12 @@ function removeFromCart(id) {
     const updatedCart = cart.filter(item => item.id !== id);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
     renderCartItems();
+    updateCartCount(); // Update the cart count after removing an item
+}
+
+// Function to update cart count in the navbar
+function updateCartCount() {
+    const cart = getCart();
+    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById('cart-count').textContent = cartCount;
 }
