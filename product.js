@@ -3,7 +3,7 @@ fetch('https://api.escuelajs.co/api/v1/products')
     .then(response => response.json())
     .then(data => {
         const productsContainer = document.getElementById('products-container'); 
-        const placeholderImage = 'https://via.placeholder.com/150'; // Default image URL
+        const placeholderImage = 'https://via.placeholder.com/150';
         data.forEach(product => {
             const cleanedImages = product.images.map(img => img.replace(/[\[\]"]/g, ''));
             const imageUrl = cleanedImages[0] || placeholderImage; 
