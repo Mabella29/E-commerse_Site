@@ -35,14 +35,15 @@
             .then(response => response.json())
             .then(data => {
                 const categoriesContainer = document.getElementById('categories-container');
-                const placeholderImage = 'https://via.placeholder.com/150'; // Default image URL
+                //const placeholderImage = 'https://via.placeholder.com/150'; // Default image URL
+                const images = 'images/hoodie2.jpeg'
                
                 data.forEach(category => {
-                    const imageUrL = category.image || placeholderImage; 
+                    const imageUrL = category.image || images; 
                     console.log(imageUrL)
                     const categoryCard = `
                         <div class="col-md-4">
-                            <img src="${imageUrL}" class="img-fluid" alt="${category.name}" onerror="this.onerror=null;this.src='${placeholderImage}';">
+                            <img src="${imageUrL}" class="img-fluid" alt="${category.name}" onerror="this.onerror=null;this.src='${images}';">
                             <h3 class="text-center">${category.name}</h3>
                             <p class="text-center"><a href="product.html" class="btn btn-primary">Shop Now</a></p>
                         </div>
