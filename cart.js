@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     renderCartItems();
-    updateCartCount(); // Ensure the cart count is updated on page load
+    updateCartCount(); 
 });
 
 function getCart() {
@@ -52,7 +52,7 @@ function removeFromCart(id) {
     const updatedCart = cart.filter(item => item.id !== id);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
     renderCartItems();
-    updateCartCount(); // Update the cart count after removing an item
+    updateCartCount(); 
 }
 
 // Function to update cart count in the navbar
