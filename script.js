@@ -6,7 +6,7 @@ fetch('https://api.escuelajs.co/api/v1/products')
     .then(data => {
         const productsContainer = document.getElementById('products-container');
         data.forEach(product => {
-            const imageUrl = product.images[0] || placeholderImage; // Fallback to placeholder image
+            const imageUrl = product.images[0] || placeholderImage;
             const productCard = `
                 <div class="col-md-4">
                     <div class="card">
@@ -50,9 +50,9 @@ function addToCart(id, title, price, image) {
     const existingProduct = cart.find(item => item.id === id);
 
     if (existingProduct) {
-        existingProduct.quantity += 1; // Increase quantity if product already in cart
+        existingProduct.quantity += 1; 
     } else {
-        cart.push({ id, title, price, image, quantity: 1 }); // Add new product to cart
+        cart.push({ id, title, price, image, quantity: 1 });
     }
 
     saveCart(cart);
